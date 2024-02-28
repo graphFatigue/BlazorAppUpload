@@ -18,7 +18,7 @@
 
 <div class="dropArea @dropClass">
     Drag and drop file here, or click to select.
-    <InputFile OnChange="OnFileInputFileChange"
+    <InputFile OnChange="OnFileInputFileChange" class="custom-file-input" accept=".docx, .DOCX"
     @ondragenter="HandleDragEnter"
     @ondragleave="HandleDragLeave" />
 </div>
@@ -65,7 +65,7 @@
         try
         {
             var name = args.File.Name;
-            if (name.EndsWith(".docx"))
+            if (name.ToLower().EndsWith(".docx"))
             {
                 UploadedBytes = 0;
 
